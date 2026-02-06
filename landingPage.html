@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pink Petals</title>
+  <style>
+    :root {
+      --primary-color: #e88abf;
+      --secondary-color: #ffd6e8;
+      --bg-color: rgba(255, 246, 250, 0.6);
+      --text-color: #4a4a4a;
+      --border-radius: 12px;
+
+      --spacing-sm: 8px;
+      --spacing-md: 16px;
+      --spacing-lg: 32px;
+
+      --font-base: 16px;
+      --font-heading: 2.2rem;
+    }
+
+    .dark-theme {
+      --bg-color: rgba(43, 27, 38, 0.7);
+      --text-color: #fce4ec;
+      --primary-color: #f48fb1;
+      --secondary-color: rgba(62, 39, 51, 0.6);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffe4ef, #ffcce0, #ffe6f2);
+      min-height: 100vh;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      color: var(--text-color);
+      font-size: var(--font-base);
+      transition: background-color 0.4s, color 0.4s;
+    }
+
+    h1, h2 {
+      font-size: var(--font-heading);
+      color: var(--primary-color);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--spacing-md) var(--spacing-lg);
+      background-color: var(--secondary-color);
+      backdrop-filter: blur(15px);
+      border-radius: var(--border-radius);
+      margin: var(--spacing-md);
+    }
+
+    nav .logo {
+      font-weight: bold;
+      color: var(--primary-color);
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: var(--spacing-md);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-color);
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+    }
+
+    .hero {
+      text-align: center;
+      padding: var(--spacing-lg);
+      background-color: var(--bg-color);
+      border-radius: var(--border-radius);
+      margin: var(--spacing-lg);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .hero p {
+      margin-top: var(--spacing-md);
+      margin-bottom: var(--spacing-md);
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      background-color: var(--primary-color);
+      color: white;
+      padding: var(--spacing-sm) var(--spacing-md);
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #d46fae;
+      transform: scale(1.05);
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--spacing-lg);
+      margin: var(--spacing-lg);
+    }
+
+    .card {
+      background-color: var(--bg-color);
+      border-radius: var(--border-radius);
+      padding: var(--spacing-md);
+      width: 280px;
+      text-align: center;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: var(--primary-color);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    footer {
+      text-align: center;
+      padding: var(--spacing-md);
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+      backdrop-filter: blur(10px);
+      margin-top: var(--spacing-lg);
+    }
+
+    @media (max-width: 600px) {
+      :root {
+        --font-base: 14px;
+        --font-heading: 1.8rem;
+      }
+
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Pink Petals</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">About</a></li>
+      <li><button class="btn" id="themeToggle">Toggle Theme</button></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h1>Welcome to Pink Petals</h1>
+    <p>Discover beauty, style, and self-care with a touch of pink magic. Every click blooms a smile!</p>
+    <button class="btn">Shop Now</button>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <h3>Skincare</h3>
+      <p>Glow like never before with our natural skincare range.</p>
+      <button class="btn">Explore</button>
+    </div>
+    <div class="card">
+      <h3>Accessories</h3>
+      <p>Delicate, chic, and charming—just like you.</p>
+      <button class="btn">Explore</button>
+    </div>
+    <div class="card">
+      <h3>Perfumes</h3>
+      <p>Fragrances that make every moment unforgettable.</p>
+      <button class="btn">Explore</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Pink Petals | All rights reserved </p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-theme');
+    });
+  </script>
+</body>
+</html>
